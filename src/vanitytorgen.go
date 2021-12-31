@@ -106,7 +106,7 @@ func main() {
 		onionAddressBytes.Write([]byte{0x03})
 		onionAddress := strings.ToLower(base32.StdEncoding.EncodeToString(onionAddressBytes.Bytes()))
 
-		// Simple display every 10000 generations to avoir slowering processing...
+		// Simple display every 10000 generations to avoid slow processing...
 		if i%10000 == 0 {
 			fmt.Printf("\r %d %s %s", i, time.Now(), onionAddress)
 		}
@@ -148,7 +148,7 @@ func main() {
 				fmt.Println(err)
 				os.Exit(1)
 			}
-			err = prvFile.Close()
+			prvFile.Close()
 
 			// Create the Tor Hidden Service public key file
 			fmt.Println("Creating public file...")
