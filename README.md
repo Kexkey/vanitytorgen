@@ -36,7 +36,7 @@ When found, the output files will be found in the current directory.
 
 ## Executable Usage
 
-Usage: vanitytorgen <prefix> [path]
+Usage: `vanitytorgen <prefix> [path]`
 
 Will generate Tor keys until corresponding onion address starts with <prefix>
 When found, `hs_ed25519_secret_key`, `hs_ed25519_public_key` and
