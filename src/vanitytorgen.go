@@ -106,14 +106,14 @@ func main() {
 		onionAddressBytes.Write([]byte{0x03})
 		onionAddress := strings.ToLower(base32.StdEncoding.EncodeToString(onionAddressBytes.Bytes()))
 
-		// Simple display every 10000 generations to avoid slow processing...
+		// Simple display every 10000 generations to avoid slowing down the process...
 		if i%10000 == 0 {
 			fmt.Printf("\r %d %s %s", i, time.Now(), onionAddress)
 		}
 		i++
 
 		if strings.HasPrefix(onionAddress, startswith) {
-			// For stats summary
+			// For stat summary
 			endTime := time.Now()
 			fmt.Printf("\r %d %s %s", i, endTime, onionAddress)
 			fmt.Println()

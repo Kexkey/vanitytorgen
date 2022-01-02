@@ -1,12 +1,11 @@
-# Vanity Tor keys/onion addresses generator
+# Vanity Tor key/onion address generator
 
 ## Assumptions
 
-You know what you are doing.  You know where to copy the output files.
-You know how to set up a Hidden Service.
+You know what you are doing.
 
-Notes: finding a vanity address can take a lot of time.  The longer
-the wanted prefix is, the more time it will take until it finds a match.
+Note: finding a vanity address can take a lot of time.  The longer
+the prefix is, the more time it will take to find a match.
 Expect to wait several thousands years for a 10+ character prefix.
 
 
@@ -31,7 +30,7 @@ Once built, you can use the image like this:
 docker run --rm -v "$PWD:/vanitytorgen" vanitytorgen prefix /vanitytorgen
 ```
 
-When found, the output files will be found in the current directory.
+When found, the output files will be saved in the mounted directory.
 
 
 ## Executable Usage
