@@ -87,20 +87,23 @@ func main() {
 		keys in the 64-byte expanded form.
 	**/
 
+	var checksumBytes bytes.Buffer
+	var onionAddressBytes bytes.Buffer
+
 	for {
 		// Key pair generation
 		publicKey, privateKey, _ := ed25519.GenerateKey(nil)
 
 		// From https://github.com/rdkr/oniongen-go
 		// checksum = H(".onion checksum" || pubkey || version)
-		var checksumBytes bytes.Buffer
+		checksumBytes.Reset()
 		checksumBytes.Write([]byte(".onion checksum"))
 		checksumBytes.Write([]byte(publicKey))
 		checksumBytes.Write([]byte{0x03})
 		checksum := sha3.Sum256(checksumBytes.Bytes())
 
 		// onion_address = base32(pubkey || checksum || version)
-		var onionAddressBytes bytes.Buffer
+		onionAddressBytes.Reset()
 		onionAddressBytes.Write([]byte(publicKey))
 		onionAddressBytes.Write([]byte(checksum[:2]))
 		onionAddressBytes.Write([]byte{0x03})

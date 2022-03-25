@@ -37,8 +37,7 @@ When found, the output files will be saved in the mounted directory.
 
 Usage: `vanitytorgen <prefix> [path]`
 
-Will generate Tor keys until corresponding onion address starts with <prefix>
+Will generate Tor keys until corresponding onion address starts with `<prefix>`.
 When found, `hs_ed25519_secret_key`, `hs_ed25519_public_key` and
 `hostname` files will be created in the given path location or
 in current directory if path is not supplied.
-
